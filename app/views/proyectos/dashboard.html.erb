@@ -1,0 +1,25 @@
+<h1 class="text-center m-4 text-dark"> Elige los Proyectos</h1>
+ 
+ <% @posts.each_slice(2) do |post_3| %>
+  <div class="card-deck m-4">
+    <%  post_3.each do |post| %>
+  <div class="card p-4">
+    <div class="card-body">
+      <h5 class="card-title">Name</h5>
+      <p class="card-text"><%= post.name %></p>
+      <h5 class="card-title">Description</h5>
+      <p class="card-text"><%= post.descripcion %></p>
+      <h5 class="card-title">Begin_at</h5>
+      <p class="card-text"><%= post.begin_at %></p>
+      <h5 class="card-title">End_at</h5>
+      <p class="card-text"><%= post.end_at %></p>
+      <h5 class="card-title">Status</h5>
+      <p class="card-text"><%= post.status %></p>
+     </div>
+  </div>
+    <% end %>
+  </div>
+   <% end %>
+
+<h3><%= link_to "Inicio", root_path %></h3>
+<h3> <%= link_to "Formulario", new_proyecto_path %></h3>
